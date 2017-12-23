@@ -1,4 +1,3 @@
-
 function [gen, imp] = get_gen_imp2
 [S, Id] = get_scores_from_file;
 
