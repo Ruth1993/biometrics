@@ -12,7 +12,7 @@ function err = fnmr(t, gen, is_sorted, output)
         gen = sort(gen, 'descend');
     end      
     % calculates percentage of all genuine scores < t
-    err = size(gen(gen < t),2) / size(gen,2);
+    err = 1-(size(gen(gen < t),2) / size(gen,2));
     % displays results if necessary
     if output
         fprintf('t and fnmr: %i %i\n', t, err)
