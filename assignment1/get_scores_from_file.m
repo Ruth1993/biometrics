@@ -11,7 +11,7 @@ Entries = (1:np);
 fprintf(' Size of score matrix: %u x %u\n',np,nt);
 fprintf(' Number of identities: %u\n', nId);
 
-fprintf(' Elements in id.txt: %u\n', size(Id));
+fprintf(' Elements in id.txt: %u\n', size(Id, 2));
 
 %figure(1); plot(Entries, Id); 
 %xlabel('Entry'); ylabel('Identity'); title('Mapping entry number to identity');

@@ -1,35 +1,40 @@
+function [aOut, gen, imp] = get_gen_imp
+    print_output = false;
+    tic
+    [S, Id] = get_scores_from_file;
+    [np, nt] = size(S);
 
-function [gen, imp] = get_gen_imp
-[S, Id] = get_scores_from_file;
-
-[np, nt] = size(S);
-
-M = max(Id);
-N = np*nt;
-R = N/M;
-
-gen = [];
-imp = [];
-
-
-for i=1:np
-    for j=1:nt
-        %check if j>=i for we only want the lower triangle and diagonal
-        disp('i and j: ' + i + ' ' + j);
-        if(i>=j)
-            if(Id(i)==Id(j) && i~=j)
-                %we found a genuine score
-                gen(end+1) = S(i, j);
-            else
-                %impostor score
-                imp(end+1) = S(i, j);
+    gen = zeros(1, np*nt); % pre-allocate for speedup
+    imp = zeros(1, np*nt);    
+    
+    %first loop over the rows of the lower triangular part of S
+    gen_i = 1;
+    imp_i = 1;
+    for i=1:np
+        j = 1;
+            while j<i
+                if Id(i)==Id(j)
+                    %add to genuine scores
+                    gen(gen_i) = S(i,j);
+                    gen_i = gen_i + 1;
+                else 
+                    %add to impostor scores
+                    imp(imp_i) = S(i,j);
+                    imp_i = imp_i + 1;
+                end
+                j = j + 1;
             end
-        end
+    end
+    gen = gen(1:gen_i-1);
+    imp = imp(1:imp_i-1);
+
+    fprintf(' Size of imp: %u\n',size(imp, 2));
+    fprintf(' Size of gen: %u\n',size(gen, 2));
+    toc
+    % displays results if necessary
+    if print_output
+        aOut = [gen, imp];
+    else
+        aOut = 0;
     end
 end
-
-fprintf(' Size of imp: %u x\n',size(imp));
-fprintf(' Size of gen: %u x\n',size(gen));
-
-fprintf('Gen: %s\n', sprintf('%d ', gen));
-fprintf('Imp: %s\n', sprintf('%d ', imp));
