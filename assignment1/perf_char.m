@@ -3,6 +3,7 @@ function perf_char
     t_min = -750;
     t_max = 150;
     
+    create_histogram(gen, imp)
     [scores_fmr, scores_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, [])
     perf_det2(scores_fmr, scores_fnmr)
     perf_roc(scores_fmr, 1-scores_fnmr)
