@@ -1,4 +1,4 @@
-function split_database
+function [Xtr, Xte] = split_database
 %load size of FaceData database
 faces = matfile('FaceData.mat');
 [m, n] = size(faces, 'FaceData');
@@ -14,6 +14,7 @@ Xte = faces.FaceData(m/2+1:m, 1:n);
 %initialize Id (identity labels for Xte)
 Id = [1:1:d];
 
+%vectorise images in Xtr and Xte
 for i=1:d
     for j=1:l
         Xtr(i,j).Image = reshape(double(Xtr(i,j).Image)/255, 2576,1);
