@@ -15,7 +15,7 @@ function det = perf_det(t_min, t_max, output)
     % plots results
     figure();
     plot(det(1,:), det(2,:));
-    title("Descision Error Trade-off (DET) curve");
+    title("Decision Error Trade-off (DET) curve");
     xlabel('FMR(t)');
     ylabel('FNMR(t)');
     
