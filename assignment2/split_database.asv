@@ -17,9 +17,9 @@ for i=1:m
         f = reshape(double(faces.FaceData(i,j).Image)/255, 2576,1);
         
         if m<=20
-            Xtr(1,(m-1)*n+j) = f;
+            Xtr(1,
         else 
-            Xte(1,(m-1)*n+j) = f;
+            Xte(1,
         end
     end
 end
