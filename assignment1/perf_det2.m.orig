@@ -11,6 +11,17 @@ function det = perf_det2(scores_fmr, scores_fnmr)
     x = det(1,:);
     y1 = det(2,:);
     
+<<<<<<< Updated upstream
+    %idx = find(y1 - y2 < eps, 1); %// Index of coordinate in array
+    %px = x(idx);
+    %py = y1(idx);
+    
+    plot(x, y1);
+    hold on
+    plot(x, y2, '--');
+    hold on
+    %plot(px, py, 'ro', 'MarkerSize', 18)
+=======
     idx = find(y1 - x < eps, 1); %// Index of coordinate in array
     px = x(idx);
     py = y1(idx);
@@ -20,7 +31,7 @@ function det = perf_det2(scores_fmr, scores_fnmr)
     plot(x, x, '--');
     plot(px, py, 'r.', 'MarkerSize', 18)
     text(px+0.02,py+0.02,['(', num2str(px), ', ', num2str(py), ')'])
-    legend('DET', 'Identity line', 'EER', 'Location','northwest');
+>>>>>>> Stashed changes
     hold off
     title("Decision Error Trade-off (DET) curve");
     xlabel('FMR(t)');

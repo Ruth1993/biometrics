@@ -6,7 +6,7 @@ function perf_char
     close all;
     
     create_histogram(gen, imp)
-    [scores_fmr, scores_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, [])
+    [scores_fmr, scores_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, []);
     perf_roc(scores_fmr, 1-scores_fnmr)
     perf_det2(scores_fmr, scores_fnmr)
 end
