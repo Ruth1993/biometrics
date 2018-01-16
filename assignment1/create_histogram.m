@@ -8,6 +8,7 @@ function [] = create_histogram(gen, imp)
     hold on
     histogram(imp, 100, 'FaceColor', 'b', 'EdgeColor', 'none', 'Normalization', 'probability');
     title("Histogram of genuine and imposter scores");
+    legend('Genuine scores', 'Impostor scores', 'Location','northwest');
     xlabel('Score');
     ylabel('Normalized probability'); 
     hold off
