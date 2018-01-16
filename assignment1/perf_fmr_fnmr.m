@@ -27,7 +27,9 @@ function [err_fmr, err_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, output)
     plot(t_min:t_max, err_fmr);
     hold on
     plot(t_min:t_max, err_fnmr);
-    title("False Match Rate (FMR) for given threshold");
+    ylim([0,1]);
+    legend('FMR', 'FNMR');
+    title("FMR and FNMR for given threshold");
     xlabel('Value of threshold');
-    ylabel('FMR: % imposter score > threshold '); 
+    ylabel('FMR and FNMR: % imposter score > threshold '); 
 end

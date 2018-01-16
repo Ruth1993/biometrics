@@ -13,6 +13,7 @@ function err = fmr(t, imp, is_sorted, output)
     end
     % calculates percentage of all impostor scores > t
     err = size(imp(imp > t),2) / size(imp,2);
+
     % displays results if necessary
     if output
         fprintf('t and fmr: %i %i\n', t, err)

@@ -1,10 +1,4 @@
-function det = perf_det(t_min, t_max, output) 
-    % closes all figures
-    close all;   
-    % gets fmr and fnmr scores
-    [~, gen, imp] = get_gen_imp;
-    scores_fmr = perf_fmr(t_min, t_max, imp, output);
-    scores_fnmr = perf_fnmr(t_min, t_max, gen, output);
+function det = perf_det2(scores_fmr, scores_fnmr) 
     det = [scores_fmr; scores_fnmr]';
     % gets lowest FNMR for every FMR value (rounded to 3 decimals) 
     %   > change @min to @max to use the highest FNMR per FMR value
@@ -14,7 +8,18 @@ function det = perf_det(t_min, t_max, output)
     det = [det_unique_fmr, det_max_fnmr]';
     % plots results
     figure();
-    plot(det(1,:), det(2,:));
+    y1 = det(2,:);
+    y2 = [0:size(y1):1];
+    plot(det(1,:), y1);
+    hold on
+    plot(0:1, y2, '--');
+    hold on
+    
+    idx = find(y1 - y2 < eps, 1); %// Index of coordinate in array
+    px = x(idx);
+    py = y1(idx);
+    
+    plot(px, py, 'ro', 'MarkerSize', 18)
     title("Decision Error Trade-off (DET) curve");
     xlabel('FMR(t)');
     ylabel('FNMR(t)');
