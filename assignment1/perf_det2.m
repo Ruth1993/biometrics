@@ -12,15 +12,15 @@ function det = perf_det2(scores_fmr, scores_fnmr)
     y1 = det(2,:);
     y2 = [0:size(y1,2):1];
     
-    idx = find(y1 - y2 < eps, 1); %// Index of coordinate in array
-    px = x(idx);
-    py = y1(idx);
+    %idx = find(y1 - y2 < eps, 1); %// Index of coordinate in array
+    %px = x(idx);
+    %py = y1(idx);
     
     plot(x, y1);
     hold on
     plot(x, y2, '--');
     hold on
-    plot(px, py, 'ro', 'MarkerSize', 18)
+    %plot(px, py, 'ro', 'MarkerSize', 18)
     hold off
     title("Decision Error Trade-off (DET) curve");
     xlabel('FMR(t)');

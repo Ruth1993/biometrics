@@ -8,7 +8,7 @@ function roc = perf_roc(scores_fmr, scores_tmr)
     roc = [roc_unique_fmr, roc_max_tmr]';
     % plots results
     figure();
-   	semilogx(roc(1,:), roc(2,:));
+   	loglog(roc(1,:), roc(2,:));
     %ylim([0.7,1]);
     %set(gca, 'yscale', 'log')
     title("Receiver Operating Characteristic (ROC) curve");

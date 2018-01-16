@@ -34,7 +34,7 @@ function [err_fmr, err_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, output)
     hold on
     plot(t_min:t_max, err_fnmr);
     ylim([0,1]);
-    legend('FMR', 'FNMR');
+    legend('FMR', 'FNMR', 'Location','northwest');
     title("FMR and FNMR for given threshold");
     xlabel('Value of threshold');
     ylabel('FMR and FNMR: % imposter score > threshold '); 
