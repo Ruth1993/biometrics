@@ -2,10 +2,10 @@ function [err_fmr, err_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, output)
     num = abs(t_max - t_min) + 1;
     diff_1 = 1 - t_min;
     
-    % loads imposter scores if necessary
-    if isempty(imp)
+    % loads imposter and genuine scores if necessary
+    if isempty(imp) || isempty(gen)
       close all;
-      [~, ~, imp] = get_gen_imp;  
+      [~, gen, imp] = get_gen_imp;  
     end
     % sorts imposter scores (ascending)
     imp_sorted = sort(imp);
@@ -14,12 +14,6 @@ function [err_fmr, err_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, output)
     for t=t_min:1:t_max
         err_fmr(t + diff_1) = fmr(t, imp_sorted, true, output);    
     end  
-    
-    % loads genuine scores if necessary
-    if isempty(gen)
-      close all;
-      [~, gen, ~] = get_gen_imp;  
-    end
     % sorts genuine scores (descending)
     gen_sorted = sort(gen, 'descend');
     % calculates FNMR for every t between t_min and t_max (inclusive)

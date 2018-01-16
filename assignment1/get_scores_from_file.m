@@ -6,7 +6,7 @@ S = load('scorematrix.txt', '-ascii');
 Id = load('id.txt', '-ascii');
 [np, nt] = size(S);
 nId = max(Id);
-Entries = (1:np);
+%Entries = (1:np);
 
 fprintf(' Size of score matrix: %u x %u\n',np,nt);
 fprintf(' Number of identities: %u\n', nId);
