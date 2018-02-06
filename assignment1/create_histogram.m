@@ -4,9 +4,11 @@ function [] = create_histogram(gen, imp)
         [~, gen, imp] = get_gen_imp;  
     end
     figure(3)
-    histogram(gen, 100, 'FaceColor', 'r', 'EdgeColor', 'none', 'Normalization', 'probability');
+    
+    histogram(gen, 250, 'FaceColor', 'r', 'EdgeColor', 'none', 'Normalization', 'probability');
     hold on
-    histogram(imp, 100, 'FaceColor', 'b', 'EdgeColor', 'none', 'Normalization', 'probability');
+    histogram(imp, 250, 'FaceColor', 'b', 'EdgeColor', 'none', 'Normalization', 'probability');
+    xlim([-750 250])
     title("Histogram of genuine and imposter scores");
     legend('Genuine scores', 'Impostor scores', 'Location','northwest');
     xlabel('Score');

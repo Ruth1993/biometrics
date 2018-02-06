@@ -22,7 +22,7 @@ function det = perf_det2(scores_fmr, scores_fnmr)
     text(px+0.02,py+0.02,['(', num2str(px), ', ', num2str(py), ')'])
     legend('DET', 'Identity line', 'EER', 'Location','northwest');
     hold off
-    title("Decision Error Trade-off (DET) curve");
+    title("Decision Error Trade-off (DET) curve and EER");
     xlabel('FMR(t)');
     ylabel('FNMR(t)');
     

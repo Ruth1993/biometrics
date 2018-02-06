@@ -31,5 +31,5 @@ function [err_fmr, err_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, output)
     legend('FMR', 'FNMR', 'Location','northwest');
     title("FMR and FNMR for given threshold");
     xlabel('Value of threshold');
-    ylabel('FMR and FNMR: % imposter score > threshold '); 
+    ylabel('FMR and FNMR: percentage of score > threshold '); 
 end

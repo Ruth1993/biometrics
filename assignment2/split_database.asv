@@ -9,7 +9,7 @@ counter = 0;
 for i=1:m
     for j=1:n
         faces_new(counter) = reshape(double(faces(i,j).Image)/255, 2576,1);
-        counter = counter + 1;
+        counter += 1;
     end
 end
 
