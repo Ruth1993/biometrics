@@ -1,3 +1,4 @@
 function train(Xtr)
-m = mean(Xtr)
+
+phi0 = mean(Xtr.Image(i,j));
 end

@@ -3,7 +3,8 @@ function [Xtr, Xte] = split_database
 faces = matfile('FaceData.mat');
 [m, n] = size(faces, 'FaceData');
 
-%split faces into half; first half is Xtr (training set) and second half is
+<<<<<<< HEAD
+%vectorise face images in faces
 faces_new = zeros(1, m * n); % pre-allocate for speedup
 counter = 0;
 for i=1:m
@@ -13,6 +14,10 @@ for i=1:m
     end
 end
 
+%slit faces into half; first half is Xtr (training set) and second half is
+=======
+%split faces into half; first half is Xtr (training set) and second half is
+>>>>>>> a284e19348309601302d43ea1f3ce3809d950fc1
 %Xte (testing set)
 Xtr = zeros(1,m*n/2);
 Xte = zeros(1,m*n/2);
