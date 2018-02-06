@@ -48,12 +48,14 @@ function [Xtr, Xte] = split_database
     mean_face = reshape(m_tr,56,46);
     subplot(num_faces/5 + 1,num_faces/2,1);
     imagesc(mean_face);
+    title("Mean face");
     colormap(gray);   
     for i=1:num_faces/5
         for j=1:num_faces/2
             eig_face = reshape(eig_vec(:,5*(i - 1) + j),56,46);
             subplot(num_faces/5 + 1,num_faces/2,5 + 5*(i - 1) + j);
-            imagesc(mean_face + 2 * eig_face);
+            imagesc(mean_face + eig_face);
+            title("Eigenface " + (5*(i - 1) + j));
             colormap(gray);
         end
     end
