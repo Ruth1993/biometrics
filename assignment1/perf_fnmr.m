@@ -15,8 +15,8 @@ function errors = perf_fnmr(t_min, t_max, gen, output)
     end 
     % plots results
     figure();
-    plot(t_min:t_max, errors);
-    title("False Nonmatch Rate (FNMR) for given threshold");
-    xlabel('Value of threshold');
-    ylabel('FNMR: % genuine score > threshold '); 
+    %plot(t_min:t_max, errors);
+    %title("False Nonmatch Rate (FNMR) for given threshold");
+    %xlabel('Value of threshold');
+    %ylabel('FNMR: % genuine score > threshold '); 
 end

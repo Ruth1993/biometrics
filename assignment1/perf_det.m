@@ -1,10 +1,4 @@
-function det = perf_det(t_min, t_max, output) 
-    % closes all figures
-    close all;   
-    % gets fmr and fnmr scores
-    [~, gen, imp] = get_gen_imp;
-    scores_fmr = perf_fmr(t_min, t_max, imp, output);
-    scores_fnmr = perf_fnmr(t_min, t_max, gen, output);
+function det = perf_det(scores_fmr, scores_fnmr) 
     det = [scores_fmr; scores_fnmr]';
     % gets lowest FNMR for every FMR value (rounded to 3 decimals) 
     %   > change @min to @max to use the highest FNMR per FMR value

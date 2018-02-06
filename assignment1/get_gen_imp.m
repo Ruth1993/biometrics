@@ -1,7 +1,7 @@
-function [aOut, gen, imp] = get_gen_imp
+function [aOut, gen, imp] = get_gen_imp(scorematrix_file, id_file)
     print_output = false;
     tic
-    [S, Id] = get_scores_from_file;
+    [S, Id] = get_scores_from_file(scorematrix_file, id_file);
     [np, nt] = size(S);
 
     gen = zeros(1, np*nt); % pre-allocate for speedup

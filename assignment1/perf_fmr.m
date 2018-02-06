@@ -14,9 +14,9 @@ function errors = perf_fmr(t_min, t_max, imp, output)
         errors(t + diff_1) = fmr(t, imp_sorted, true, output);    
     end  
     % plots results
-    figure();
-    plot(t_min:t_max, errors);
-    title("False Match Rate (FMR) for given threshold");
-    xlabel('Value of threshold');
-    ylabel('FMR: % imposter score > threshold '); 
+    %figure();
+    %plot(t_min:t_max, errors);
+    %title("False Match Rate (FMR) for given threshold");
+    %xlabel('Value of threshold');
+    %ylabel('FMR: % imposter score > threshold '); 
 end

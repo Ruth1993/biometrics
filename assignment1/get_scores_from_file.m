@@ -1,9 +1,9 @@
-function [S, Id] = get_scores_from_file%
+function [S, Id] = get_scores_from_file(scorematrix_file, id_file) 
 %
 % Loads score matrix and plots info.
 %
-S = load('scorematrix.txt', '-ascii');
-Id = load('id.txt', '-ascii');
+S = load(scorematrix_file, '-ascii');
+Id = load(id_file, '-ascii');
 [np, nt] = size(S);
 nId = max(Id);
 %Entries = (1:np);
