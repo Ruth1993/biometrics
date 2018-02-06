@@ -18,17 +18,18 @@ Xtr = zeros(1,m*n/2);
 Xte = zeros(1,m*n/2);
 
 %initialize Id (identity labels for Xte)
-Id = [1:1:d];
+Id = [1:1:size(Xte,2)];
 
 %vectorise images in Xtr and Xte
 for i=1:m
     for j=1:n
-        f = reshape(double(faces.FaceData(i,j).Image)/255, 2576,1);
+        f = faces.FaceData(i,j);
+        vec = reshape(double(f.Image)/255, 2576,1);
         
-        if m<=20
-            Xtr(1,(m-1)*n+j) = f;
+        if i<=20
+            Xtr(1,(i-1)*n+j) = vec;
         else 
-            Xte(1,(m-1)*n+j) = f;
+            Xte(1,(i-21)*n+j) = vec;
         end
     end
 end
