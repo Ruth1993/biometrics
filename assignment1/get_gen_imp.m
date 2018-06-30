@@ -1,6 +1,4 @@
-function [aOut, gen, imp] = get_gen_imp(scorematrix_file, id_file)
-    print_output = false;
-    tic
+function [gen, imp] = get_gen_imp(scorematrix_file, id_file)
     [S, Id] = get_scores_from_file(scorematrix_file, id_file);
     [np, nt] = size(S);
 
@@ -30,11 +28,5 @@ function [aOut, gen, imp] = get_gen_imp(scorematrix_file, id_file)
 
     fprintf(' Size of imp: %u\n',size(imp, 2));
     fprintf(' Size of gen: %u\n',size(gen, 2));
-    toc
-    % displays results if necessary
-    if print_output
-        aOut = [gen, imp];
-    else
-        aOut = 0;
-    end
+
 end

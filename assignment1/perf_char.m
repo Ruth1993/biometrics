@@ -1,5 +1,5 @@
 function perf_char
-    [~, gen, imp] = get_gen_imp;
+    [~, gen, imp] = get_gen_imp("scorematrix.txt", "id.txt");
     t_min = -750;
     t_max = 150;
     
