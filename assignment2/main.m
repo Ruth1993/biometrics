@@ -7,7 +7,7 @@ function main
     addpath ../assignment1/  
     
     % gets fmr and fnmr scores
-    [~, gen, imp] = get_gen_imp("Scorematrices/scorematrix_10.txt", "identitiesmatrix.txt");
+    [gen, imp] = get_gen_imp("Scorematrices/scorematrix_60.txt", "identitiesmatrix.txt");
     
     [scores_fmr, scores_fnmr] = perf_fmr_fnmr(t_min, t_max, imp, gen, output);
    
